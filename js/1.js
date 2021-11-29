@@ -1,16 +1,4 @@
-let testData = [
-  1,
-  2,
-  1990,
-  85,
-  24,
-  "Vasya",
-  "colya@example.com",
-  "Rafshan",
-  "ashan@example.com",
-  true,
-  false,
-];
+import { testData, testData2, testData3, testData4 } from "./data.js";
 
 const array_find = (array, search) => {
   console.log(search);
