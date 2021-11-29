@@ -12,11 +12,11 @@ let testData = [
   false,
 ];
 
-function array_find(array, search) {
+const array_find = (array, search) => {
   console.log(search);
   const result = array.find((el) => el === search);
   return result;
-}
+};
 
 // let result2 = array_find(testData, "Rafshan"); // ["Rafshan"]
 // console.log(result2);
