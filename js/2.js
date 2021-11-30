@@ -21,6 +21,6 @@ let result = array_avg(testData2); // ~265
 let result2 = array_avg(testData); // ~420
 let result3 = array_avg(testData, true); // ~191+
 
-console.log(result);
-console.log(result2);
-console.log(result3);
+// console.log(result);
+// console.log(result2);
+// console.log(result3);
