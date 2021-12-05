@@ -6,4 +6,4 @@ const array_unique = (array) => {
 
 let result = array_unique(testData.concat(testData2)); // [1, 2, 1990, 85, 24, 5, 7, 8.1, "Vasya", "colya@example.com", "Rafshan", "ashan@example.com", true, false]
 
-console.log(result);
+// console.log(result);
