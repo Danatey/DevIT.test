@@ -108,18 +108,22 @@ const normalizeArray = (array, transform) => {
 
 const normalizeObject = (array, shema, transform) => {
   let newArray = [];
+  const result = array.find((el) => el === shema);
+  if (result) {
+    return result;
+  }
   const [keySearch] = Object.keys(shema);
-  const [valueSearch] = Object.values(shema);
-
-  for (let i = 0; i < array.length; i++) {
-    let element = array[i];
-    const type = Object.prototype.toString.call(element).slice(8, -1);
-    if (type === "Object") {
-      for (const key in element) {
-        if (key === keySearch) {
-          let newObject = {};
-          newObject[key] = element[key];
-          newArray.push(newObject);
+  if (transform) {
+    for (let i = 0; i < array.length; i++) {
+      let element = array[i];
+      const type = Object.prototype.toString.call(element).slice(8, -1);
+      if (type === "Object") {
+        for (const key in element) {
+          if (key === keySearch) {
+            let newObject = {};
+            newObject[key] = element[key];
+            newArray.push(newObject);
+          }
         }
       }
     }

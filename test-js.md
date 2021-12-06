@@ -144,10 +144,10 @@ let result3 = array_skip_until(testData, "asd") // []
 5 (1бал)
 Сделать функцию для проверки существования значения в не нормализированном списке данных.
 
-Синтаксис: array_contains(arr: array, search: string|regex): bool
+Синтаксис: array*contains(arr: array, search: string|regex): bool
 Пример:
-let result = array_contains(testData4, '/^raf._/i') // true
-let result2 = array_contains(testData4, '/^azaza._/i') // false
+let result = array_contains(testData4, '/^raf.*/i') // true
+let result2 = array_contains(testData4, '/^azaza.\*/i') // false
 
 6 (1бал)
 Сделать функцию для получения данных с массивов по указанному пути (аминь).
@@ -161,10 +161,10 @@ let result3 = array_get(testData4, '[17][0][0][0][11][0][name]') // "Rafshan"
 7 (1бал)
 Сделать функцию для поиска значений и пути к нему в не нормализированном списке данных (аминь).
 
-Синтаксис: array_search(arr: array, search: string|regex[, path:string = '']): [path: string, value: string|number][]
+Синтаксис: array*search(arr: array, search: string|regex[, path:string = '']): [path: string, value: string|number][]
 Пример:
-let result = array_search(testData4, '/^raf._/i') // [["[5].name", "Rafshan"], ["[13]", "Rafshan"], ["[17][0][0][0][7]", "Rafshan"], ["[17][0][0][0][11][0].name", "Rafshan"]]
-let result2 = array_search(testData4, '/^raf._/i', '[17][0][0][0]') // [["[17][0][0][0][7]", "Rafshan"], ["[17][0][0][0][11][0].name", "Rafshan"]]
+let result = array_search(testData4, '/^raf.*/i') // [["[5].name", "Rafshan"], ["[13]", "Rafshan"], ["[17][0][0][0][7]", "Rafshan"], ["[17][0][0][0][11][0].name", "Rafshan"]]
+let result2 = array*search(testData4, '/^raf.*/i', '[17][0][0][0]') // [["[17][0][0][0][7]", "Rafshan"], ["[17][0][0][0][11][0].name", "Rafshan"]]
 
 8 (1бал)
 Создать функцию которая создает объект на основании двух представленных массивов используя один как ключи, а другой как значения. Не подходящие ключи массивов должны быть исключены.

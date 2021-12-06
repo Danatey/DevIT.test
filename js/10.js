@@ -13,17 +13,14 @@ const array_pluck = (array, path) => {
 
   const pathArray = path.split(".");
   for (let i = 0; i < array.length; i++) {
+    let turnPath = 0;
     let element = array[i];
-
-    // let elementPath = pathArray[i];
-    // console.log(elementPath);
-    // if (pathArray.length > 1) {
-    //   for (let i = 0; i < pathArray.length - 1; i++) {
-    //     let newObject = element[pathArray[i]];
-    //     // let a = findObjectKey(newObject, elementPath);
-    //   }
-    // }
-    newArray.push(element[path]);
+    let findKey = findObjectKey(element, pathArray[turnPath]);
+    if (turnPath !== pathArray.length - 1) {
+      turnPath++;
+      findKey = findObjectKey(findKey, pathArray[turnPath]);
+    }
+    newArray.push(findKey);
   }
   return newArray;
 };
